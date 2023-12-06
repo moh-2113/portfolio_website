@@ -243,7 +243,7 @@
                 </span>
             </h1>
                 <div id="contact-container">
-                    <div id="contact-form-container">
+                    <div id="contact-form-container" onsubmit="sendEmail(); reset(); return false;">
                         <form id="contact-form">
                             <input id="input-name" name="name" type="text" placeholder="Your Name">
                             <input id="input-email" name="input-email" type="text" required placeholder="Your Email">
@@ -298,5 +298,21 @@
         </section>
     </main>
 </body>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+    function sendEmail(){
+        Email.send({
+            Host : "smtp.gmail.com",
+            Username : "tmohitkumar.esummit@gmail.com",
+            Password : "eSUMMIT2k22",
+            To : 'tileakrmohit@gmail.com',
+            From : document.getElementById("input-email").value,
+            Subject : "Contact form enquiry",
+            Body : "And this is the body"
+        }).then(
+          message => alert(message)
+        );
+    }
+</script>
 <script src="script.js"></script>
 </html>
