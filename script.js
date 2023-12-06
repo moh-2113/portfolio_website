@@ -31,7 +31,20 @@ function scrollVertically(targetSection) {
   window.scrollBy(0, 50);
 }
 
-
+// Contact form
+function sendEmail(){
+        Email.send({
+            Host : "smtp.gmail.com",
+            Username : "tmohitkumar.esummit@gmail.com",
+            Password : "eSUMMIT2k22",
+            To : 'tileakrmohit@gmail.com',
+            From : document.getElementById("input-email").value,
+            Subject : "Contact form enquiry",
+            Body : "And this is the body"
+        }).then(
+          message => alert(message)
+        );
+    }
 //Skill Bars Filling
 
 var progressBars = document.querySelectorAll(".skill-progress > div");
